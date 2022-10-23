@@ -1,0 +1,32 @@
+{{!-- <ul class="people_list">
+  {{#each customers}}
+  <li>{{this.flightName}}</li>
+  {{/each}}
+</ul> --}}
+
+
+<div style="width:800px; margin-left:25%; margin-top:15%">
+  {{#each customers}}
+  <div class="card" style="margin-bottom: 7px;">
+    <div class="card-body">
+      <h5 class="card-title">{{this.flightName}}</h5>
+      <h3 class="card-text">{{this.from}}--->{{this.to}}</h3>
+      <h4 class="card-text">Seats left ->{{this.seats}}</h4>
+      <form method="POST" action="/flightsList" style="margin-left: 45%;"  class="inline">
+        <input type="hidden" name="id" value={{this._id}}>
+         <input type="hidden" name="flightName" value={{this.flightName}}>
+        <input type="hidden" name="seats" value={{this.seats}}>
+        <input type="hidden" name="from" value={{this.from}}>
+        <input type="hidden" name="to" value={{this.to}}>
+        <input type="hidden" name="date" value={{this.date}}>
+        <button style="margin-top: 20px;" type="submit" class="btn btn-primary">Book Flight</button>
+      </form>
+    </div>
+  </div>
+  {{/each}}
+
+</div>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">

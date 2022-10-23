@@ -1,0 +1,24 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">BOOKED FLIGHTS</span>
+  </div>
+</nav>
+
+<div style="width:800px; margin-left:25%; margin-top:15%">
+  {{#each bookedFlights}}
+  <div class="card" style="margin-bottom: 7px;">
+    <div class="card-body">
+      <h5 class="card-title">{{this.flightName}}</h5>
+      <h3 class="card-text">{{this.from}}--->{{this.to}}</h3>
+            <h4 class="card-text">seats left->{{this.seats}}</h4>
+
+      <h4 class="card-text">{{this.date}}</h4>
+    </div>
+  </div>
+  {{/each}}
+
+</div>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
